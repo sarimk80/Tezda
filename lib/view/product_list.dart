@@ -89,11 +89,15 @@ Widget productTile(ProductsModel model, BuildContext context) {
             ),
             SizedBox(width: 16),
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.6,
+              width: MediaQuery.of(context).size.width * 0.5,
               child: Text(model.title ?? '', softWrap: true),
             ),
             Spacer(),
             Text(" ${model.price.toString()}"),
+            SizedBox(width: 8,),
+            IconButton(onPressed: (){
+
+            }, icon: Icon(Icons.favorite_outline))
           ],
         ),
       ),

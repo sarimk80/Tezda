@@ -11,6 +11,7 @@ class ProductsModel {
   String? category;
   String? image;
   Rating? rating;
+  bool isLike;
 
   ProductsModel({
     required this.id,
@@ -20,6 +21,7 @@ class ProductsModel {
     required this.category,
     required this.image,
     required this.rating,
+    this.isLike = false,
   });
 
   factory ProductsModel.fromJson(Map<String, dynamic> json) =>
@@ -35,10 +37,7 @@ class Rating {
 
   Rating({required this.rate, required this.count});
 
-  factory Rating.fromJson(Map<String, dynamic> json) =>
-      _$RatingFromJson(json);
+  factory Rating.fromJson(Map<String, dynamic> json) => _$RatingFromJson(json);
 
   Map<String, dynamic> toJson() => _$RatingToJson(this);
 }
-
-

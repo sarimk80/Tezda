@@ -1,5 +1,5 @@
-
 import 'package:dio/dio.dart';
+import 'package:hive/hive.dart';
 import 'package:tezda/model/products_model.dart';
 
 class ApiService {
@@ -8,6 +8,8 @@ class ApiService {
   Future<List<ProductsModel>> getAllProducts() async {
     final response = await dio.get('/products');
     final data = response.data as List;
-    return data.map((json) => ProductsModel.fromJson(json)).toList();
+
+    var products = data.map((json) => ProductsModel.fromJson(json)).toList();
+    return products;
   }
 }
